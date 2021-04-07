@@ -5,9 +5,15 @@
 }
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1616710556972-75444e7e0fd9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');
+    background-size: cover;
+    
 }
 i,svg{
     pointer-events: none;
+}
+p{
+    color: white;
 }
 .title{
     text-align: center;
@@ -15,6 +21,8 @@ i,svg{
 }
 .sequencer h1{
     font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 .sequencer{
     display: flex;
