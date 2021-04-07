@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/app.css">
-    <title>beat maker</title>
+    <title>alexander's beatmaker</title>
 </head>
 <body>
     <div class="sequencer">
+        <h1 class="title">Alexander's BeatMaker</h1>
         <div class="kick-track">
             <div class="controls">
                 <h1>Kick</h1>
@@ -17,6 +18,7 @@
                     <option value="./sounds/kick-classic.wav">Classic kick</option>
                     <option value="./sounds/kick-808.wav">808 kick</option>
                     <option value="./sounds/kick-heavy.wav">kick Heavy</option>
+                    <option value="./sounds/kick-softy.wav">Kick Softy</option>  
                 </select>
             </div>
             <div class="kick">
@@ -38,6 +40,7 @@
                     <option value="./sounds/snare-acoustic01.wav">Classic Snare</option>
                     <option value="./sounds/snare-808.wav">808 snare</option>
                     <option value="./sounds/snare-vinyl01.wav">Snare Vinyl </option>
+                    <option value="./sounds/snare-electro.wav">Snare Electro</option>
                 </select>
             </div>
             <div class="snare">
@@ -59,6 +62,7 @@
                     <option value="./sounds/hihat-acoustic01.wav">Hihat Acoustic </option>
                     <option value="./sounds/hihat-808.wav">808 hihat</option>
                     <option value="./sounds/hihat-plain.wav">Hihat Plain</option>
+                    <option value="./sounds/hihat-ring.wav">Hihat Ring</option>
                 </select>
             </div>
             <div class="hihat">
@@ -72,11 +76,38 @@
                 <div class="pad hihat-pad b7"></div>
             </div>
         </div>
+        <div class="crash-track">
+            <div class="controls">
+                <h1>Crash</h1>
+                <button data-track="2" class="mute crash-volume"><i class="fas fa-volume-mute">4</i></button>
+                <select name="crash-select" id="crash-select">
+                    <option value="./sounds/tom-acoustic01wav">Crash Noise </option>
+                    <option value="./sounds/tom-fm.wav">808 crash</option>
+                    <option value="./sounds/tom-short.wav">crash tape</option>
+                    <option value="./sounds/tom-lofi.wav">Tom Lofi</option>
+                </select>
+            </div>
+            <div class="crash">
+                <div class="pad crash-pad b0"></div>
+                <div class="pad crash-pad b1"></div>
+                <div class="pad crash-pad b2"></div>
+                <div class="pad crash-pad b3"></div>
+                <div class="pad crash-pad b4"></div>
+                <div class="pad crash-pad b5"></div>
+                <div class="pad crash-pad b6"></div>
+                <div class="pad crash-pad b7"></div>
+            </div>
+        </div>
         <button class="play">Play</button>
+        <div class="tempo">
+            <input type="range" class="tempo-slider" max="300" min="20" value="150">
+            <p>Tempo <span class="tempo-nr">150</span></p>
+        </div>
     </div>
     <audio class="kick-sound" src="./sounds/kick-classic.wav"></audio>
     <audio class="snare-sound" src="./sounds/snare-acoustic01.wav"></audio>
     <audio class="hihat-sound" src="./sounds/hihat-plain.wav"></audio>
+    <audio class="crash-sound" src="./sounds/tom-acoustic01.wav" ></audio>
     <script src="assets/app.js"></script>
 </body>
 </html>

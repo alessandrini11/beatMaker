@@ -4,10 +4,17 @@
     box-sizing: border-box;
 }
 body{
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 i,svg{
     pointer-events: none;
+}
+.title{
+    text-align: center;
+    text-transform: uppercase;
+}
+.sequencer h1{
+    font-size: 1.5rem;
 }
 .sequencer{
     display: flex;
@@ -16,7 +23,7 @@ i,svg{
     align-items: center;
     justify-content: center;
 }
-.kick-pad,.snare-pad,.hihat-pad{
+.kick-pad,.snare-pad,.hihat-pad,.crash-pad{
     width: 5rem;
     height: 5rem;
     margin: 1rem 1rem;
@@ -30,6 +37,12 @@ i,svg{
 }
 .hihat-pad{
     background: rgb(160, 224, 160)
+}
+.crash-pad{
+    background: rgb(224, 223, 160)
+}
+.crash-pad.active{
+    background: rgb(192, 211, 19);
 }
 .kick-pad.active{
     background: rgb(19, 172, 211);
@@ -59,15 +72,14 @@ i,svg{
 .pad{
     transition: all 0.5s ease;
 }
-.kick,.hihat,.snare{
+.kick,.hihat,.snare,.crash{
     display: flex;
 }
-.hihat-track,.snare-track,.kick-track{
+.hihat-track,.snare-track,.kick-track,.crash-track{
     display: flex;
     align-items: center;
-    width: 70%;
     justify-content: space-between;
-    margin-top: 5rem;
+    margin: 5rem auto 0;
 }
 .play{
     padding: 1rem 2rem;
@@ -83,11 +95,66 @@ select{
     font-size: 1rem;
     
 }
+.mute.active{
+    background:rgba(95, 93, 93,0.8);
+}
+.tempo{
+    margin: 3rem;
+    width: 30%;
+}
+.tempo-slider{
+    padding: 0.2rem;
+    appearance: none;
+    margin: 1rem 0;
+    width: 100%;
+    position: relative;
+    border-radius: 1rem;
+    background: rgb(88, 88, 88);
+    color: white;;
+}
+.tempo p{
+    text-align: center;
+}
 @keyframes playTrack {
     from{
         transform: scale(1);
     }
     to{
         transform: scale(1.2);
+    }
+}
+@media (max-width:1000px){
+    select{
+        padding: 0.3rem 0.3rem;
+        font-size: small;
+    }
+    .hihat-track,.snare-track,.kick-track,.crash-track{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem auto 0;
+    }
+    .kick-pad,.snare-pad,.hihat-pad,.crash-pad{
+        width: 2.2rem;
+        height: 2.2rem;
+        margin: 0.5rem 0.2em;
+        cursor: pointer;
+    }
+    .tempo-slider{
+        margin: .2rem;
+    }
+    .play{
+        margin-top: 1rem;
+        padding: .5rem 1rem;
+    }
+    .tempo{
+        margin: 1.5rem;
+        width: 60%;
+    }
+    .controls button{
+        padding: 0.5rem;
+    }
+    .controls{
+        margin: 0 0.5rem;
+        width: 100%;
     }
 }
